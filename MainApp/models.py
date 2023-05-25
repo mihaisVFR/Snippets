@@ -18,6 +18,9 @@ class Snippet(models.Model):
     private = models.BooleanField(default=True)
 
 
+    def __str__(self):
+        return f"Snippet {self.name} | {self.user}"
+
 class Comment(models.Model):
     text = models.TextField(max_length=1000)
     creation_date = models.DateTimeField(auto_now=True)
